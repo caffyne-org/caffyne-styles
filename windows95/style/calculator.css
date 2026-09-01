@@ -1,0 +1,47 @@
+/* ----- Calculator ----- */
+
+/* calc.exe kept its readout in a sunken white field, right-aligned. */
+.calculator-display {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+    color: var(--w95_ink);
+}
+
+.calculator-button.digit,
+.calculator-button.operator,
+.calculator-button.equals {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.calculator-button.digit:hover,
+.calculator-button.operator:hover,
+.calculator-button.equals:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.calculator-button.digit:active,
+.calculator-button.operator:active,
+.calculator-button.equals:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.calculator-button.digit:focus,
+.calculator-button.operator:focus,
+.calculator-button.equals:focus {
+    box-shadow: apply(bevel-out);
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -4px;
+}
+
+/* Every key was the same grey; only the label colour set them apart. */
+.calculator-button.operator * {
+    color: var(--w95_title);
+}
+
+.calculator-button.equals * {
+    color: var(--w95_maroon);
+    font-weight: bold;
+}

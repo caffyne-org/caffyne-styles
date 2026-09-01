@@ -1,0 +1,25 @@
+/* ----- Lock screen ----- */
+
+/* The Win95 logon dialog: raised grey box, sunken white password field. */
+.lockscreen-entry-box {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.lockscreen-clock {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.lockscreen-submit-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.lockscreen-submit-button * {
+    color: var(--w95_ink);
+}
+
+.lockscreen-submit-button:active {
+    box-shadow: apply(bevel-in);
+}

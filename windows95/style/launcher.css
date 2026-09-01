@@ -1,0 +1,89 @@
+/* ----- Launcher ----- */
+
+.launcher {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.launcher-results {
+    background-color: transparent;
+}
+
+/*
+ * The base sheet gives the search box a real 1px border, which counts towards
+ * its size — so recolour it to the face instead of removing it, and put the
+ * sunken edge inside with a box-shadow.
+ */
+.launcher-search,
+.launcher-search.focused {
+    background-color: var(--w95_field);
+    border-color: var(--w95_face);
+    box-shadow: apply(bevel-field);
+}
+
+.launcher-search-icon {
+    color: var(--w95_ink);
+}
+
+.launcher-header * {
+    color: var(--w95_ink);
+}
+
+.launcher-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.launcher-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.launcher-button:focus {
+    box-shadow: apply(bevel-out);
+}
+
+/* The results list is a listbox: sunken white well, blue selection bar. */
+.launcher-app-container {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.launcher-app {
+    background-color: transparent;
+}
+
+.launcher-app:hover,
+.launcher-app:active,
+.launcher-app:focus {
+    background-color: var(--w95_title);
+    box-shadow: none;
+}
+
+.launcher-app:hover *,
+.launcher-app:active *,
+.launcher-app:focus * {
+    color: var(--w95_title_text);
+}
+
+/* The grid view is icons, not a list, so those stay as raised buttons. */
+.launcher-grid-app {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.launcher-grid-app:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.launcher-grid-app:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.launcher-grid-app:focus {
+    box-shadow: apply(bevel-out);
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -4px;
+}

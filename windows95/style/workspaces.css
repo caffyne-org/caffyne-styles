@@ -1,0 +1,66 @@
+/* ----- Workspaces ----- */
+
+/*
+ * `.workspace` carries a real 1px border in the base sheet, which is part of its
+ * size — recolour it rather than dropping it, and let the box-shadow do the
+ * bevel inside.
+ */
+.workspace {
+    background-color: var(--w95_face);
+    border-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.workspace.active {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    border-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+/* ----- Dots variant ----- */
+
+.workspace-dots-container {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.workspace-dot {
+    background-color: var(--w95_shadow);
+}
+
+.workspace-dot.active {
+    background-color: var(--w95_title);
+}
+
+.workspace-pill {
+    color: var(--w95_title);
+}
+
+/* ----- Numbers variant ----- */
+
+.workspace-numbers-container {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+/* These are 24px and sit inside the sunken strip, so they stay flat. */
+.workspace-numbers-container .workspace {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
+.workspace-numbers-container .workspace label {
+    color: var(--w95_ink);
+}
+
+.workspace-numbers-container .workspace.active {
+    background-color: var(--w95_title);
+    background-image: none;
+    box-shadow: none;
+}
+
+.workspace-numbers-container .workspace.active label {
+    color: var(--w95_title_text);
+}

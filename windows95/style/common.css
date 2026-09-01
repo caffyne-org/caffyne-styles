@@ -1,0 +1,167 @@
+/* ----- Global resets ----- */
+
+/*
+ * One universal rule squares off the entire shell. It also beats every
+ * `border-radius: apply(radius-*)` in the base sheet, because this provider is
+ * added after it. snippets/flat_scale.py reads border-radius back out of the
+ * style context to draw its custom scale, so that goes square too.
+ */
+* {
+    border-radius: 0px;
+    transition: none;
+    text-shadow: none;
+}
+
+selection {
+    background-color: var(--w95_title);
+    color: var(--w95_title_text);
+}
+
+/* ----- Shared widgets ----- */
+
+.corner {
+    background-color: var(--w95_face);
+    border-color: var(--w95_shadow);
+}
+
+.progress-bar {
+    color: var(--w95_light);
+    border-color: var(--w95_title);
+}
+
+.scrollable {
+    background-color: transparent;
+}
+
+/*
+ * SmoothSwitch is custom-drawn: `color` is the knob, `background-color` is the
+ * track. Off is a sunken grey channel, on is the active-caption blue.
+ */
+.smooth-switch,
+.dash-switch {
+    color: var(--w95_face);
+    background-color: var(--w95_shadow);
+}
+
+.smooth-switch.checked,
+.dash-switch.checked {
+    color: var(--w95_face);
+    background-color: var(--w95_title);
+}
+
+/* A Win95 checkbox is a sunken white well with a black tick. */
+.timeout-lock-checkbox check {
+    background-color: var(--w95_field);
+    border-color: var(--w95_shadow);
+    box-shadow: apply(bevel-in-thin);
+    color: var(--w95_ink);
+}
+
+.timeout-lock-checkbox check:checked,
+.timeout-lock-checkbox check:hover,
+.timeout-lock-checkbox check:focus {
+    background-color: var(--w95_field);
+    border-color: var(--w95_shadow);
+    color: var(--w95_ink);
+}
+
+.timeout-adjuster,
+.lockscreen-password {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+/* ----- Circular scales ----- */
+
+.circular-scale {
+    background-color: transparent;
+}
+
+.circular-scale trough {
+    background-color: var(--w95_shadow);
+    border-color: var(--w95_shadow);
+}
+
+.circular-scale highlight {
+    background-color: var(--w95_title);
+}
+
+.circular-scale slider {
+    background-color: var(--w95_face);
+}
+
+/* ----- Menus ----- */
+
+menu,
+.context-menu {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+    animation: none;
+}
+
+menuitem:hover {
+    background-color: var(--w95_title);
+}
+
+menuitem:hover label,
+menuitem:active label {
+    color: var(--w95_title_text);
+}
+
+menuitem:active {
+    background-color: var(--w95_title);
+    color: var(--w95_title_text);
+}
+
+/* Win95 marked keyboard focus with a dotted rect, never a coloured outline. */
+menuitem:focus {
+    box-shadow: none;
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -3px;
+}
+
+/* ----- Scales / trackbars ----- */
+
+.scale slider {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.scale trough {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-in-thin);
+    border-color: var(--w95_light);
+}
+
+.scale highlight {
+    background-color: var(--w95_title);
+    border-color: var(--w95_title);
+}
+
+/* ----- Scrollbars ----- */
+
+/*
+ * The base sheet gives the slider a 6px minimum (10px hovered), so these use the
+ * 1px bevel — a 2px one has nothing left to fill. Keeping the size means no
+ * 16px Win95 scrollbar, which is the one place this pack trades authenticity
+ * for the promise that nothing moves.
+ */
+scrollbar {
+    background-color: var(--w95_face);
+}
+
+scrollbar trough {
+    background-color: var(--w95_light);
+    background-image: apply(dither-face);
+}
+
+scrollbar slider {
+    background: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+scrollbar slider:hover,
+scrollbar slider:active {
+    background: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}

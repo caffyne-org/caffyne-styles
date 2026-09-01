@@ -1,0 +1,99 @@
+/* ----- Applet windows ----- */
+
+.applet {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+/*
+ * snippets/applet.py builds the header as a CenterBox holding the back button,
+ * the title and a right-hand slot — near enough to a Win95 title bar to paint
+ * it like one. It keeps its 36px height, so the applet doesn't change size.
+ */
+.applet-header {
+    background-color: var(--w95_title);
+    background-image: linear-gradient(to right,
+                                      var(--w95_title),
+                                      var(--w95_title_grad));
+}
+
+.applet-header * {
+    color: var(--w95_title_text);
+}
+
+.applet-header-label {
+    color: var(--w95_title_text);
+    font-weight: bold;
+}
+
+/* ...but the buttons sitting in the title bar are still grey system buttons. */
+.applet-header .applet-misc-button * {
+    color: var(--w95_ink);
+}
+
+.applet-stack {
+    background-color: transparent;
+}
+
+/* ----- Buttons ----- */
+
+.applet-misc-button,
+.applet-misc-button.battery {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.applet-misc-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.applet-misc-button:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.applet-misc-button:active * {
+    color: var(--w95_ink);
+}
+
+.applet-misc-button:focus {
+    box-shadow: apply(bevel-out);
+}
+
+.applet-misc-button.active,
+.applet-misc-button.active:hover {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.applet-misc-button.active * {
+    color: var(--w95_ink);
+}
+
+/* ----- Device rows ----- */
+
+.menu-device-item {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.menu-device-item:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.menu-device-item:focus {
+    box-shadow: apply(bevel-out);
+}
+
+.menu-list-placeholder {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.menu-list-placeholder-label {
+    opacity: 1;
+    color: var(--w95_ink_dim);
+}

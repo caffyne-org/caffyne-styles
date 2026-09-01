@@ -1,0 +1,15 @@
+/*
+ * The base sheet routes every font through the `mixed-mono` / `always-mono`
+ * constants in style/fonts.css, which are resolved when the *base* sheet is
+ * compiled and so can't be reached from here. Overriding `*` instead works,
+ * because this provider is added last and wins every property it declares.
+ *
+ * None of these faces ship with a normal Linux install; if you don't have one
+ * the stack falls through to your default sans, which keeps icon glyphs intact.
+ * Install "MS Sans Serif" or the "Pixelated MS Sans Serif" bitmap revival for
+ * the real thing.
+ */
+* {
+    font-family: "MS Sans Serif", "Microsoft Sans Serif",
+                 "Pixelated MS Sans Serif", Tahoma, "Segoe UI", sans-serif;
+}

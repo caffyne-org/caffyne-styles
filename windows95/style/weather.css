@@ -1,0 +1,25 @@
+/* ----- Weather ----- */
+
+.weather-main {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.hourly-time,
+.daily-day,
+.daily-min-temp,
+.daily-max-temp {
+    color: var(--w95_ink_dim);
+}
+
+/* The temperature range reads as a progress bar: sunken trough, blue fill. */
+.temp-bar {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-in-thin);
+    color: var(--w95_title);
+}
+
+.temp-bar-range {
+    background-color: var(--w95_title);
+    box-shadow: apply(bevel-out-thin);
+}

@@ -1,0 +1,47 @@
+/*
+ * Windows 95 — a style pack for caffyne-shell
+ *
+ * This pack is appended on top of ~/.config/caffyne-shell/style/style.css as a
+ * second GtkCssProvider. In GTK3's style cascade the provider added *last* wins
+ * every property it declares, regardless of selector specificity — so a rule as
+ * weak as `* { border-radius: 0px; }` here still beats `.bar-button { ... }` in
+ * the base sheet. That is what lets this pack stay small.
+ *
+ * The pack only ever touches colour, border-radius and box-shadow. It never
+ * declares min-width, min-height, padding or margin, and it never adds a real
+ * `border`, so every element keeps exactly the size the base sheet gave it.
+ */
+
+@import "colors.css";
+@import "borders.css";
+
+/*
+ * fonts.css is deliberately NOT imported. It swaps the whole shell over to an
+ * MS Sans Serif stack, and since none of those faces are installed here it
+ * falls through to the generic sans — whose metrics are 1px taller than the
+ * shell default, which nudges the height of every widget containing a label.
+ * Install a Win95 face and add fonts.css to the import list above to enable it.
+ * (Write the import out by hand: this preprocessor resolves @import even inside
+ *  a comment, so you cannot leave a commented-out one sitting here.)
+ */
+
+@import "app.css";
+@import "applet.css";
+@import "bar.css";
+@import "calculator.css";
+@import "calendar.css";
+@import "clock.css";
+@import "common.css";
+@import "dock.css";
+@import "graph.css";
+@import "launcher.css";
+@import "lockscreen.css";
+@import "notifications.css";
+@import "media.css";
+@import "power.css";
+@import "quick_settings.css";
+@import "weather.css";
+@import "workspaces.css";
+@import "dash.css";
+@import "desktop.css";
+@import "osd.css";

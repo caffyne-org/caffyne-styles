@@ -1,0 +1,104 @@
+/* ----- The taskbar ----- */
+
+.bar {
+    background-color: var(--w95_face);
+}
+
+/*
+ * A docked taskbar only bevels the edge facing the desktop: white-then-light on
+ * the inner side, shadow-then-black on the outer. Written back-to-front, as
+ * always.
+ */
+.bar.top {
+    box-shadow: inset 0px -2px var(--w95_shadow),
+                inset 0px -1px var(--w95_frame);
+}
+
+.bar.bottom {
+    box-shadow: inset 0px 2px var(--w95_light),
+                inset 0px 1px var(--w95_highlight);
+}
+
+/* Undocked, it's a floating panel and gets the full raised edge. */
+.bar.floating,
+.bar.top.floating,
+.bar.bottom.floating,
+.bar.top.min-width,
+.bar.bottom.min-width,
+.bar.floating.min-width {
+    box-shadow: apply(bevel-out);
+}
+
+/* ----- Edit mode ----- */
+
+.bar.top.edit-mode,
+.bar.bottom.edit-mode,
+.bar.top.floating.edit-mode,
+.bar.bottom.floating.edit-mode,
+.bar.top.min-width.edit-mode,
+.bar.bottom.min-width.edit-mode,
+.bar.floating.min-width.edit-mode {
+    box-shadow: apply(bevel-out-accent);
+}
+
+/* ----- Widgets ----- */
+
+/*
+ * `.bar-widget` is the outer EventBox (bar.py:422) and `.bar-button` its child,
+ * so the bevel belongs on the wrapper — putting it on both would double the
+ * edge. Widgets without a wrapper (Workspaces, Dock) stay flat, exactly as they
+ * are in the base sheet.
+ */
+.bar-button {
+    background-color: transparent;
+}
+
+.bar-widget {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.bar-widget.hovered {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.bar-widget.active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+/* A taskbar button for the focused window: pressed in, face dithered. */
+.bar-widget.applet-open,
+.bar-widget.applet-open.hovered {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.bar-widget.group-drop-target {
+    background-color: var(--w95_title);
+    box-shadow: apply(bevel-in);
+}
+
+.bar-widget.group-drop-invalid {
+    background-color: var(--w95_maroon);
+    box-shadow: apply(bevel-in);
+}
+
+/* ----- Drag & drop ----- */
+
+.drop-target-active {
+    background-color: var(--w95_title);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.drop-placeholder {
+    background: var(--w95_light);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.variant-picker {
+    background-color: var(--w95_face);
+}

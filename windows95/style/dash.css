@@ -1,0 +1,183 @@
+/* ----- Dash ----- */
+
+/* The scrim goes desktop teal instead of black. */
+.dash {
+    background-color: alpha(var(--w95_desktop), 0.55);
+}
+
+.dash-grid,
+.dash-stack,
+.dash-grid-selector-scroll,
+.grid-selector-thumb-scroll {
+    background-color: transparent;
+}
+
+/* ----- Grid items ----- */
+
+.dash-launcher-app,
+.dash-applet-item {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.dash-launcher-app:hover,
+.dash-applet-item:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.dash-launcher-app:active,
+.dash-applet-item:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.dash-launcher-app:focus,
+.dash-applet-item:focus {
+    box-shadow: apply(bevel-out);
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -4px;
+}
+
+.in-bar * {
+    opacity: 0.4;
+}
+
+/* ----- Selection ----- */
+
+.dash-grid-selector-preview.active,
+.wallpaper-thumb-image.active {
+    box-shadow: apply(bevel-out-accent);
+}
+
+.theme-preview-box {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-field);
+}
+
+.matugen-thumb {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.theme-preview-color-container {
+    box-shadow: apply(bevel-out-thin);
+}
+
+/* ----- Settings sections ----- */
+
+.section-body {
+    box-shadow: apply(bevel-out-thin);
+}
+
+.section-child {
+    background-color: var(--w95_face);
+}
+
+.section-header {
+    color: var(--w95_ink);
+    font-weight: bold;
+}
+
+/* A segmented control is a row of tabs: sunken strip, raised current item. */
+.option-selection-container {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.option-selection-button {
+    background-color: transparent;
+}
+
+.option-selection-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.option-selection-button.active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.option-selection-button.active * {
+    color: var(--w95_ink);
+}
+
+/* ----- Header ----- */
+
+.dash-header-button-container {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.dash-header-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.dash-header-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.dash-header-button:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.dash-header-button.active {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.dash-header-button.active * {
+    color: var(--w95_ink);
+}
+
+.dash-theme-preview-title {
+    color: var(--w95_ink);
+}
+
+.template-refresh-button,
+.template-info-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.template-refresh-button:hover,
+.template-info-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+/* ----- Tooltips ----- */
+
+/* COLOR_INFOBK, one hairline of black, no fade. The 1px border is already in
+   the base sheet's size, so it's recoloured rather than replaced. */
+tooltip label {
+    background-color: var(--w95_tooltip);
+    color: var(--w95_ink);
+    border-color: var(--w95_ink);
+    box-shadow: none;
+    animation: none;
+}
+
+/* ----- Drag & drop ----- */
+
+.applet-drop-zone {
+    background-color: var(--w95_light);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.launcher-drop-placeholder,
+.desktop-applet-preview.valid {
+    background-color: alpha(var(--w95_title), 0.3);
+    border-color: var(--w95_title);
+}
+
+.desktop-applet-preview.invalid {
+    background-color: alpha(var(--w95_maroon), 0.3);
+    border-color: var(--w95_maroon);
+}

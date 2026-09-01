@@ -1,0 +1,184 @@
+/* ----- Quick settings ----- */
+
+/*
+ * Note the base sheet mixes conventions here: .qs-button, .qs-button-small and
+ * .qs-power-profile-button take `.hover` / `.focus` as style *classes*, while
+ * .qs-button-chevron, .qs-button-label and the menu buttons use the real
+ * :hover / :focus pseudo-classes. Both spellings are matched below.
+ *
+ * A toggle that's on becomes a latched toolbar button — pressed in with a
+ * dithered face — rather than a filled accent block.
+ */
+
+.qs-button,
+.qs-button-chevron,
+.qs-button-label,
+.qs-button-small {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.qs-button.hover,
+.qs-button-small.hover,
+.qs-button-chevron:hover,
+.qs-button-label:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.qs-button.focus,
+.qs-button.active.focus,
+.qs-button-small.focus,
+.qs-button-chevron:focus,
+.qs-button-label:focus {
+    box-shadow: apply(bevel-out);
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -4px;
+}
+
+.qs-button.active,
+.qs-button.active.hover,
+.qs-button-small.active,
+.qs-button-small.active.hover,
+.qs-button-chevron.active,
+.qs-button-chevron.active:hover,
+.qs-button-label.active,
+.qs-button-label.active:hover {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.qs-button.active *,
+.qs-button-small.active *,
+.qs-button-chevron.active *,
+.qs-button-label.active * {
+    color: var(--w95_ink);
+}
+
+.qs-description-label {
+    opacity: 1;
+    color: var(--w95_ink_dim);
+    border-color: var(--w95_face);
+}
+
+/* ----- Power profiles ----- */
+
+/* A group box holding a row of buttons: sunken strip, raised selection. */
+.qs-power-modes-box {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.qs-power-profile-button {
+    background-color: transparent;
+}
+
+.qs-power-profile-button.hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.qs-power-profile-button.active,
+.qs-power-profile-button.active.hover {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.qs-power-profile-button.active * {
+    color: var(--w95_ink);
+}
+
+.qs-power-profile-button.focus {
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -2px;
+}
+
+/* ----- Device switcher ----- */
+
+.qs-device-switcher {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.qs-device-switcher-button {
+    background-color: transparent;
+}
+
+.qs-device-switcher-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.qs-device-switcher-button.active,
+.qs-device-switcher-button.active:hover {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.qs-device-switcher-button:focus,
+.qs-device-switcher-button.active:focus {
+    outline: 1px dotted var(--w95_ink);
+    outline-offset: -3px;
+}
+
+/* ----- Menus ----- */
+
+.qs-menu-disconnect-button,
+.qs-kb-menu-button,
+.qs-power-menu-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.qs-kb-menu-button:hover,
+.qs-power-menu-button:hover,
+.qs-menu-disconnect-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.qs-kb-menu-button:active,
+.qs-power-menu-button:active,
+.qs-menu-disconnect-button:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.qs-kb-menu-button:focus,
+.qs-power-menu-button:focus {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+/* ----- Device list ----- */
+
+.qs-device-item {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.qs-device-item:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.qs-device-item.connecting * {
+    color: var(--w95_ink_dim);
+}
+
+/* --on_error is white in the base palette, which vanishes on grey. */
+.qs-device-item.failed * {
+    color: var(--w95_maroon);
+}
+
+.qs-device-item.active * {
+    color: var(--w95_title);
+    font-weight: bold;
+}
+
+.qs-device-item-detail * {
+    opacity: 1;
+    color: var(--w95_ink_dim);
+}

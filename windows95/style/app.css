@@ -1,0 +1,138 @@
+/* ----- Settings window ----- */
+
+.app-window {
+    background-color: var(--w95_face);
+}
+
+.app-header-button,
+.header-page-btn {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.app-header-button:hover,
+.header-page-btn:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.app-header-button:active,
+.header-page-btn:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.app-section-container {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+/* ----- Sidebar ----- */
+
+.app-sidebar {
+    background-color: var(--w95_face);
+}
+
+.app-sidebar-item {
+    background-color: transparent;
+}
+
+.app-sidebar-item-icon {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+/* The selected row is a listbox selection: solid caption blue, white text. */
+.app-sidebar-item.active {
+    background-color: var(--w95_title);
+}
+
+.app-sidebar-item.active * {
+    color: var(--w95_title_text);
+}
+
+.app-sidebar-item.active .app-sidebar-item-icon {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.app-sidebar-item.active .app-sidebar-item-icon * {
+    color: var(--w95_ink);
+}
+
+/* ----- Rows ----- */
+
+.app-row-container {
+    box-shadow: apply(bevel-out-thin);
+}
+
+.app-row {
+    background-color: var(--w95_face);
+}
+
+/* ----- Pack cards ----- */
+
+.pack-card {
+    box-shadow: apply(bevel-out);
+}
+
+.pack-card-info-row {
+    background-color: var(--w95_face);
+}
+
+.pack-card-btn {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.pack-card-btn:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.pack-card-btn:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.pack-card-preview-empty {
+    background-image: linear-gradient(to right,
+                                      var(--w95_title),
+                                      var(--w95_title_grad));
+}
+
+/* ----- Bezier editor ----- */
+
+.bezier-canvas-container {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.bezier-entry-label,
+.bezier-label {
+    color: var(--w95_ink_dim);
+}
+
+.bezier-entry {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+    color: var(--w95_ink);
+}
+
+.bezier-entry:focus {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.bezier-link-btn {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+    color: var(--w95_ink);
+}
+
+.bezier-link-btn-active {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+    color: var(--w95_ink);
+}

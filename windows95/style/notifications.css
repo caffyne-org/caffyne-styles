@@ -1,0 +1,58 @@
+/* ----- Notifications ----- */
+
+/* A notification is a message box: raised grey panel, bold black summary. */
+.notification {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.notification-placeholder,
+.notification-history-container {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.notification-placeholder-label {
+    opacity: 1;
+    color: var(--w95_ink_dim);
+}
+
+/* Opacity on grey turns to mud, so dim the body with a real colour instead. */
+.notification-body {
+    opacity: 1;
+    color: var(--w95_ink_dim);
+}
+
+.notification-image-container {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.notification-action,
+.notification-action.history {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.notification-action:hover,
+.notification-action.history:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.notification-action:active,
+.notification-action.history:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.history-notification {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.notification-dismiss-button:hover,
+.notification-remove-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}

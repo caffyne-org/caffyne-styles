@@ -1,0 +1,23 @@
+/* ----- Dock ----- */
+
+.dock-item.hovered,
+.dock-item.pinned.hovered {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out-thin);
+}
+
+.dock-item.active,
+.dock-item.pinned.active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in-thin);
+}
+
+.dock-item.pinned {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out-thin);
+}
+
+/* The separator is 1px wide, so it can't hold a bevel — flat shadow grey. */
+.dock-separator {
+    background: var(--w95_shadow);
+}

@@ -1,0 +1,17 @@
+/* ----- Calendar ----- */
+
+.calendar-header-day {
+    color: var(--w95_ink_dim);
+}
+
+.calendar-day-selected {
+    background-color: var(--w95_title);
+}
+
+.calendar-day-selected * {
+    color: var(--w95_title_text);
+}
+
+.calendar-day-outside * {
+    color: var(--w95_shadow);
+}

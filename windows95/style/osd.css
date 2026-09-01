@@ -1,0 +1,25 @@
+/* ----- On-screen display ----- */
+
+.osd {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.osd-updater-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.osd-updater-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.osd-updater-button:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.osd-updater-title {
+    font-weight: bold;
+}

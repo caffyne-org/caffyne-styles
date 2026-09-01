@@ -1,0 +1,57 @@
+/* ----- Clock / timer ----- */
+
+.clock-timer-widget-button,
+.world-clock-button {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-out);
+}
+
+.clock-timer-widget-button:hover,
+.world-clock-button:hover {
+    background-color: var(--w95_light);
+    box-shadow: apply(bevel-out);
+}
+
+.clock-timer-widget-button:focus,
+.world-clock-button:focus {
+    box-shadow: apply(bevel-out);
+}
+
+.world-clock-button:active {
+    background-color: var(--w95_face);
+    box-shadow: apply(bevel-in);
+}
+
+.clock-timer-widget-button.active,
+.clock-timer-widget-button.active:hover {
+    background-color: var(--w95_face);
+    background-image: apply(dither-face);
+    box-shadow: apply(bevel-in);
+}
+
+.clock-timer-widget-button.active * {
+    color: var(--w95_ink);
+}
+
+/* Readouts sit in sunken wells, the way a status-bar panel did. */
+.clock-timer-label,
+.laps-scroll {
+    background-color: var(--w95_field);
+    box-shadow: apply(bevel-field);
+}
+
+.clock-dnd-icon.active {
+    color: var(--w95_title);
+}
+
+.clock-circular-scale slider {
+    background-color: var(--w95_face);
+}
+
+.clock-circular-scale trough {
+    background-color: var(--w95_shadow);
+}
+
+.clock-circular-scale highlight {
+    background-color: var(--w95_title);
+}

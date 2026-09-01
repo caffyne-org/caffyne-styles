@@ -1,0 +1,75 @@
+/*
+ * Windows 95 had no rounded corners anywhere, so every radius collapses to 0.
+ * (`* { border-radius: 0px }` in common.css does the real work; these constants
+ *  exist so rules in this pack can be written the same way as the base sheet.)
+ */
+
+@define radius-s  0px;
+@define radius-m  0px;
+@define radius-l  0px;
+@define radius-xl 0px;
+
+/*
+ * The 3D edges.
+ *
+ * Every one of these is an inset box-shadow stack rather than a real border,
+ * because a border participates in GTK's size allocation and would grow every
+ * widget by 4px — the whole point of this pack is that nothing changes size.
+ *
+ * IMPORTANT: GTK3 paints a comma-separated box-shadow list in the REVERSE of
+ * the CSS order — the *last* shadow ends up on top, where the CSS spec puts the
+ * first one on top. Every stack below is therefore written bottom layer first,
+ * i.e. back-to-front. Verified by rasterising a test widget with
+ * Gtk.OffscreenWindow and reading the corner pixels.
+ *
+ * Each stack needs 4px of the widget to render into (2px per side); on anything
+ * smaller use the -thin variants.
+ */
+
+/* Raised: a button, a panel, a taskbar tile at rest. */
+@define bevel-out
+    inset  2px  2px var(--w95_face),
+    inset -2px -2px var(--w95_shadow),
+    inset  1px  1px var(--w95_highlight),
+    inset -1px -1px var(--w95_frame);
+
+/* Pressed: the same edge with the light source flipped. */
+@define bevel-in
+    inset  2px  2px var(--w95_shadow),
+    inset -2px -2px var(--w95_face),
+    inset  1px  1px var(--w95_frame),
+    inset -1px -1px var(--w95_highlight);
+
+/* Sunken well: text fields, list boxes, anything holding content. */
+@define bevel-field
+    inset  2px  2px var(--w95_frame),
+    inset -2px -2px var(--w95_face),
+    inset  1px  1px var(--w95_shadow),
+    inset -1px -1px var(--w95_highlight);
+
+/* Selected / edit mode: a raised edge with an accent ring instead of a face. */
+@define bevel-out-accent
+    inset  2px  2px var(--w95_title),
+    inset -2px -2px var(--w95_title),
+    inset  1px  1px var(--w95_highlight),
+    inset -1px -1px var(--w95_frame);
+
+/* 1px versions, for group boxes, separators and anything under 4px. */
+@define bevel-out-thin
+    inset  1px  1px var(--w95_highlight),
+    inset -1px -1px var(--w95_shadow);
+
+@define bevel-in-thin
+    inset  1px  1px var(--w95_shadow),
+    inset -1px -1px var(--w95_highlight);
+
+/*
+ * The 50% dither Windows used for a latched toolbar button and for the desktop
+ * behind a drag. A true checkerboard needs a pattern in both axes, which GTK3
+ * gradients can't express, so this is a 1px diagonal hatch — at this scale it
+ * reads the same.
+ */
+@define dither-face
+    repeating-linear-gradient(45deg,
+        var(--w95_highlight) 0px, var(--w95_highlight) 1px,
+        transparent 1px, transparent 2px);
